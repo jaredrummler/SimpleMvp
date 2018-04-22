@@ -36,8 +36,7 @@ public class PresenterManager {
 
   }
 
-  @SuppressWarnings("WeakerAccess")
-  /*package*/ final Map<String, Presenter> PRESENTERS = new HashMap<>();
+  private final Map<String, Presenter> PRESENTERS = new HashMap<>();
 
   public <P extends Presenter> P get(@NonNull PresenterFactory<P> factory, @Nullable Bundle savedInstanceState) {
     final P presenter;
@@ -64,8 +63,7 @@ public class PresenterManager {
     PRESENTERS.put(presenter.getId(), presenter);
   }
 
-  @SuppressWarnings("WeakerAccess")
-    /*package*/ void remove(@NonNull Presenter presenter) {
+  private void remove(@NonNull Presenter presenter) {
     PRESENTERS.remove(presenter.getId());
   }
 }
